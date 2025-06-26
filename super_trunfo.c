@@ -61,10 +61,10 @@ int main()
     scanf("%f", &pib1);
     cleanBuffer();
 
-  	 printf("Qtd Pontos Turísticos: ");
-	scanf("%d", &qtdPontosTuristicos1);
-	cleanBuffer();
-	
+  	printf("Qtd Pontos Turísticos: ");
+    scanf("%d", &qtdPontosTuristicos1);
+    cleanBuffer();
+
     printf("\nCARTA Nº 2\n");
 
     printf("Estado: ");
@@ -92,10 +92,10 @@ int main()
     scanf("%f", &pib2);
     cleanBuffer();
 
-	printf("Qtd Pontos Turísticos: ");
-	scanf("%d", &qtdPontosTuristicos2);
-	cleanBuffer();
-	
+    printf("Qtd Pontos Turísticos: ");
+    scanf("%d", &qtdPontosTuristicos2);
+    cleanBuffer();
+
     printf("=============================================\n                  1a CARTA\n=============================================\n");
     printf("Estado: %c\n", codigo1[0]);
     printf("Código da Carta: %3s\n", codigo1);
