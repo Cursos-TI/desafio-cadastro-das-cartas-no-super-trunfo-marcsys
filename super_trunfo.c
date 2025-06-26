@@ -1,6 +1,15 @@
+/**
+ * DESAFIO SUPER TRUNFO - PAÍSES
+ * NÍVEL 1 - NOVATO
+ *
+ * Apenas lê dados de 2 cartas e os exibe de volta
+ */
+
 #include <stdio.h>
 #include <string.h>
+
 /*
+DESABILITADO POR ENQUANTO O USO DE STRUCT PARA ORGANIZAR AS INFORMAÇÕES
 struct Carta {
     char codigo[3];
     char cidade[50];
@@ -10,6 +19,11 @@ struct Carta {
     int qtdPontosTuristicos;
 };
 */
+
+/**
+ * Função para retirar quaisquer caracteres que ainda estejam no buffer
+ * de entrada de caracteres do taclado
+ */
 void cleanBuffer() {
     char ch;
     while ((ch = getchar()) != EOF && ch != '\n'); 
@@ -34,27 +48,30 @@ int main()
     printf("╚══════╝ ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═╝       ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝      ╚═════╝ \n");
     printf("\n");
 
-    printf("CARTA Nº 1\n");
+    /**
+     * Entrada de dados manual para todos os dados.
+     */
 
+    printf("CARTA Nº 1\n");
     printf("Estado: ");
-    scanf("%[ABCDEFGH]", &codigo1[0]);
+    scanf("%[ABCDEFGH]", &codigo1[0]); // Apenas as letras especificadas serão aceitas
     cleanBuffer();
 
     codigo1[1] = '0';
     printf("Codigo da Carta: %c%c", codigo1[0], codigo1[1]);
-    scanf("%[1234]", &codigo1[2]);
+    scanf("%[1234]", &codigo1[2]); // Apenas os dígitos especificados serão aceitos
     cleanBuffer();
 
     printf("Cidade: ");
-    scanf("%[^\n]", cidade1);
+    scanf("%[^\n]", cidade1); // Todos os caracteres serão aceitos exceto quebra de linha
     cleanBuffer();
 
     printf("Qtd. Habitantes: ");
-    scanf("%d", &populacao1);
+    scanf("%d", &populacao1); // Apenas dígitos numéricos são aceitos
     cleanBuffer();
 
     printf("Área territorial: ");
-    scanf("%f", &area1);
+    scanf("%f", &area1); // Apenas dígitos e separador decimal inglês, o ponto
     cleanBuffer();
 
     printf("PIB: ");
@@ -95,6 +112,10 @@ int main()
     printf("Qtd Pontos Turísticos: ");
     scanf("%d", &qtdPontosTuristicos2);
     cleanBuffer();
+
+    /**
+     *  Exibição dos dados infromados.
+     */
 
     printf("=============================================\n                  1a CARTA\n=============================================\n");
     printf("Estado: %c\n", codigo1[0]);
