@@ -6,7 +6,6 @@
  */
 
 #include <stdio.h>
-#include <string.h>
 
 /*
 DESABILITADO POR ENQUANTO O USO DE STRUCT PARA ORGANIZAR AS INFORMAÇÕES
@@ -38,6 +37,7 @@ int main()
     float area1, area2;
     float pib1, pib2;
     int qtdPontosTuristicos1, qtdPontosTuristicos2;
+    float densidade1, densidade2, perCapita1, perCapita2;
 
     printf("\n");
     printf("███████╗██╗   ██╗██████╗ ███████╗██████╗     ████████╗██████╗ ██╗   ██╗███╗   ██╗███████╗ ██████╗ \n");
@@ -82,6 +82,13 @@ int main()
     scanf("%d", &qtdPontosTuristicos1);
     cleanBuffer();
 
+    /*
+     * Cálculo da densidade populacional e do PIB per capita
+     * da 1º carta.
+     */
+    densidade1 = populacao1 / area1;
+    perCapita1 = pib1 * 1000000000 / populacao1;
+
     printf("\nCARTA Nº 2\n");
 
     printf("Estado: ");
@@ -113,6 +120,13 @@ int main()
     scanf("%d", &qtdPontosTuristicos2);
     cleanBuffer();
 
+    /*
+     * Cáulculo da densidade populacional e do PIB per capita
+     * da 2ª carta.
+     */
+    densidade2 = populacao2 / area2;
+    perCapita2 = pib2 * 1000000000 / populacao2;
+
     /**
      *  Exibição dos dados infromados.
      */
@@ -122,17 +136,20 @@ int main()
     printf("Código da Carta: %3s\n", codigo1);
     printf("Cidade: %s\n", cidade1);
     printf("População: %d habitantes\n", populacao1);
-    printf("Área territorial: %f Km²\n", area1);
-    printf("PIB: %f bilhões de reais\n", pib1);
-    printf("Quantidade de pontos turísticos :%d\n", qtdPontosTuristicos1);
+    printf("Área territorial: %.2f Km²\n", area1); // Especificando formato com 2 casas decimais
+    printf("PIB: %.2f bilhões de reais\n", pib1);
+    printf("Quantidade de pontos turísticos: %d\n", qtdPontosTuristicos1);
+    printf("Densidade populacional: %.2f hab/km²\n", densidade1);
+    printf("PIB per capita: %.2f reais\n", perCapita1);
 
     printf("=============================================\n                  2a CARTA\n=============================================\n");
     printf("Estado: %c\n", codigo2[0]);
     printf("Código da Carta: %3s\n", codigo2);
     printf("Cidade: %s\n", cidade2);
     printf("População: %d habitantes\n", populacao2);
-    printf("Área territorial: %f Km²\n", area2);
-    printf("PIB: %f bilhões de reais\n", pib2);
-    printf("Quantidade de pontos turísticos :%d\n", qtdPontosTuristicos2);
-
+    printf("Área territorial: %.2f Km²\n", area2);
+    printf("PIB: %.2f bilhões de reais\n", pib2);
+    printf("Quantidade de pontos turísticos: %d\n", qtdPontosTuristicos2);
+    printf("Densidade populacional: %.2f hab/km²\n", densidade2);
+    printf("PIB per capita: %.2f reais", perCapita2);
 }
